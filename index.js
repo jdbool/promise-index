@@ -2,9 +2,14 @@ const promiseIndex = asyncFunction => {
 	const pendingPromises = {};
 
 	const run = async (uniqueKey, ...args) => {
-		const result = await asyncFunction(...args);
-		delete pendingPromises[uniqueKey];
-		return result;
+		try {
+			const result = await asyncFunction(...args);
+			delete pendingPromises[uniqueKey];
+			return result;
+		} catch (err) {
+			delete pendingPromises[uniqueKey];
+			throw err;
+		}
 	};
 
 	return async (uniqueKey, ...args) => {
