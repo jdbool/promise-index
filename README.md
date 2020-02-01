@@ -5,7 +5,7 @@ Small library for avoiding Promise race conditions in concurrent events.
 # Using
 
 ```
-npm install promise-index
+npm i promise-index
 ```
 
 Wrap around any async function, and what you get is a very similar function with an additional `uniqueKey` argument at the start.
