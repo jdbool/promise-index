@@ -1,0 +1,23 @@
+{
+  "name": "promise-index",
+  "version": "0.1.0",
+  "description": "Small library for avoiding Promise race conditions in concurrent events.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdbool/promise-index.git"
+  },
+  "keywords": [
+    "promise",
+    "async"
+  ],
+  "author": "jdbool",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdbool/promise-index/issues"
+  },
+  "homepage": "https://github.com/jdbool/promise-index#readme"
+}
