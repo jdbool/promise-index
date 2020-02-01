@@ -6,7 +6,7 @@ Small library for avoiding Promise race conditions in concurrent events.
 
 Wrap around any async function, and what you get is a very similar function with an additional `uniqueKey` argument at the start.
 
-If called when there's already a pending promise with the exact same `uniqueKey`, the same promise will be returned.
+If called when there's **already a pending promise** with the exact same `uniqueKey`, the same promise will be returned.
 
 ## Example
 
