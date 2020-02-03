@@ -15,7 +15,7 @@ If called when there's **already a pending promise** with the exact same `unique
 ## Example
 
 ```js
-const promiseIndex = require('promise-index');
+const { promiseIndex } = require('promise-index');
 
 // findOrCreateUser is the async function we can use
 // Its first argument is the uniqueKey

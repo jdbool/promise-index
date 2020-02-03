@@ -20,4 +20,28 @@ const promiseIndex = asyncFunction => {
 	};
 };
 
-module.exports = promiseIndex;
+const promiseQueue = asyncFunction => {
+	const pendingPromises = {};
+
+	const run = async (uniqueKey, ...args) => {
+		if (pendingPromises[uniqueKey]) {
+			await pendingPromises[uniqueKey].then(
+				() => 0,
+				() => 1
+			);
+		}
+		const result = await asyncFunction(...args);
+		return result;
+	};
+
+	return async (uniqueKey, ...args) => {
+		const promise = run(uniqueKey, ...args);
+		pendingPromises[uniqueKey] = promise;
+		return promise;
+	};
+};
+
+module.exports = {
+	promiseIndex,
+	promiseQueue
+};

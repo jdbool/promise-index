@@ -1,4 +1,4 @@
-const promiseIndex = require('./index');
+const { promiseIndex } = require('./index');
 
 const getRandom = promiseIndex(
 	(add, prefix) =>
